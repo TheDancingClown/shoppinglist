@@ -1,0 +1,12 @@
+{
+  "name": "ingredients",
+  "displayName": "ingredients",
+  "expo": {
+    "name": "ingredients",
+    "slug": "ingredients",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
