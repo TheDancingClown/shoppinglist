@@ -1,0 +1,24 @@
+[
+  {
+    "Peanut satay tempeh with chilli & crispy kale rice": {
+      "grams": {
+        "carrots": 200,
+        "kale": 80,
+        "brown rice": 80,
+        "tempeh": 200
+      },
+      "units": {
+        "chilli": 0.5,
+        "coriander": 1,
+        "ginger": 1,
+        "lime": 1,
+        "spring onion": 2,
+        "tamari": 2
+      },
+      "tablespoons": {
+        "maple syrup": 1,
+        "peanut paste": 2
+      }
+    }
+  }
+]
