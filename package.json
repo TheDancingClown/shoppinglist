@@ -25,6 +25,9 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "babel-jest": "~25.2.6",
+    "detox": "^18.2.2",
+    "detox-expo-helpers": "^0.6.0",
+    "expo-detox-hook": "^1.0.10",
     "jest": "~25.2.6",
     "react-test-renderer": "~16.13.1"
   },
