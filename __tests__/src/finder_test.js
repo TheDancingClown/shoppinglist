@@ -1,14 +1,19 @@
-import Finder from '../../src/finder.js'
+import MealFinder from '../../src/MealFinder.js'
 
-let finder;
-const example = [{"title": "salad", "grams":{ "carrots":200}}]
+let planner;
+const example = [{"title": "salad", "ingredients":{"carrot":"200 g", "cucumber": "0.5 units"}},{"title": "carrot", "ingredients":{"carrot":"1 unit"}}]
 
 beforeEach(function() {
-  finder = new Finder();
+  planner = new MealFinder();
 });
 
-describe('finder', () => {
-  it("checks for ingredient and returns a object", () => {
-    expect(finder.check("grams", example)).toEqual(example)
+describe('filterMatchingMeals', () => {
+  it("returns all meals with carrot ingredients", () => {
+    expect(planner.filterMatchingMeals("carrot", example)).toEqual(example);
+    expect(planner.filterMatchingMeals("cucumber", example)).toEqual([{"title": "salad", "ingredients":{"carrot":"200 g", "cucumber": "0.5 units"}}]);
+  });
+
+  it("returns an empty array if no match", () => {
+    expect(planner.filterMatchingMeals("aubergine", example)).toEqual([]);
   });
 });
