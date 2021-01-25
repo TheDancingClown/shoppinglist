@@ -21,6 +21,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text>Enter an ingredient</Text>
       <TextInput
+      testID='ingredient-search'
       onChangeText={text => searchIngredients(text)}
       style={{borderColor: 'lightgray', borderWidth: 1, width: 200}}
       />
