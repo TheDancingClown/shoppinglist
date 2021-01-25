@@ -1,21 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, FlatList } from 'react-native';
+import Meal from './components/Meal'
 import MealFinder from './src/MealFinder'
-
-const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
-
 
 export default function App() {
   const recipes = require('./src/recipes.json')
-  const [meals, setMeals] = useState([])
+  const [meals, setMeals] = useState(recipes)
   const planner = new MealFinder();
-  const renderItem = ({ item }) => (
-    <Item key={item.index} title={item.title} />
+  const renderMeals = ({ item }) => (
+    <Meal key={item.index} title={item.title} />
   );
 
   const searchIngredients = async (text) => {
@@ -27,11 +21,11 @@ export default function App() {
       <Text>Enter an ingredient</Text>
       <TextInput
       onChangeText={text => searchIngredients(text)}
-      style={{borderColor: 'black', borderWidth: 1, width: 200}}
+      style={{borderColor: 'lightgray', borderWidth: 1, width: 200}}
       />
       <FlatList
         data={meals}
-        renderItem={renderItem}
+        renderItem={renderMeals}
         extraData={meals}
         keyExtractor={item => item.key}
       />
@@ -46,5 +40,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 20
   },
 });

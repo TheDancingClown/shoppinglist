@@ -1,7 +1,8 @@
 class MealFinder {
 
-  filterMatchingMeals(ingredient, recipes) {
-    return recipes.filter(meal => Object.keys(meal.ingredients).some(food => food.includes(ingredient.toLowerCase())))
+  filterMatchingMeals(textInput, recipes) {
+    return recipes.filter(meal => Object.keys(meal.ingredients)
+    .some(ingredient => ingredient.includes(textInput.toLowerCase())))
   };
 };
 
