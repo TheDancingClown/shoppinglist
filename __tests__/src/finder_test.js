@@ -16,4 +16,8 @@ describe('filterMatchingMeals', () => {
   it("returns an empty array if no match", () => {
     expect(planner.filterMatchingMeals("aubergine", example)).toEqual([]);
   });
+
+  it("ignore case sensitivity", () => {
+    expect(planner.filterMatchingMeals("Carrot", example)).toEqual(example);
+  })
 });
