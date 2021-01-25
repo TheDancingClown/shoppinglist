@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TextInput, View, FlatList } from 'react-native';
 import MealFinder from './src/MealFinder'
 
@@ -11,33 +11,15 @@ const Item = ({ title }) => (
 
 
 export default function App() {
-  const DATA = [
-    {
-      "title": "Peanut satay tempeh with chilli & crispy kale rice",
-      "ingredients": {
-        "carrot": "200 g",
-        "kale": "80 g",
-        "brown rice": "80 g",
-        "tempeh": "200 g",
-        "chilli": "0.5 units",
-        "coriander": "1 units",
-        "ginger": "1 units",
-        "lime": "1 units",
-        "spring onion": "2 units",
-        "tamari": "2 units",
-        "maple syrup": "1 tbls",
-        "peanut paste": "2 tbls"
-      }
-    }
-  ]
+  const recipes = require('./src/recipes.json')
   const [meals, setMeals] = useState([])
   const planner = new MealFinder();
   const renderItem = ({ item }) => (
-    <Item title={item.title} />
+    <Item key={item.index} title={item.title} />
   );
 
-  const searchIngredients = (text) => {
-    setMeals(planner.filterMatchingMeals(text, DATA));
+  const searchIngredients = async (text) => {
+    setMeals(planner.filterMatchingMeals(text, recipes));
   };
 
   return (
@@ -51,6 +33,7 @@ export default function App() {
         data={meals}
         renderItem={renderItem}
         extraData={meals}
+        keyExtractor={item => item.key}
       />
       <StatusBar style="auto" />
     </View>
