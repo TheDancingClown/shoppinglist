@@ -1,37 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, FlatList, SafeAreaView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, TextInput, FlatList, SafeAreaView } from 'react-native';
 import Meal from './components/Meal'
-import MealFinder from './src/MealFinder'
+import { v4 as uuidv4 } from 'uuid';
 
 export default function App() {
-  const recipes = require('./src/recipes.json')
-  const [meals, setMeals] = useState(recipes)
-  const planner = new MealFinder();
-
+  const recipes = require('./src/recipes.json');
+  const [meals, setMeals] = useState(recipes);
+  const [shoppingList, setShoppingList] = useState([]);
+  
   const renderMeals = ({ item }) => (
-    <Meal key={item.index} title={item.title} />
+    <Meal item={item} addItem={addMealToShoppingList} />
   );
 
-  const searchIngredients = (text) => {
-    setMeals(planner.filterMatchingMeals(text, recipes));
+  const filterRecipesByIngredient = (textInput) => {
+    setMeals(recipes.filter(meal => Object.keys(meal.ingredients)
+    .some(ingredient => ingredient.includes(textInput.toLowerCase()))));
+  };
+
+  const addMealToShoppingList = (item) => {
+    setShoppingList(prevItems => {
+      return [...prevItems, item]
+    })
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Enter an ingredient</Text>
+      <Text>Search By Ingredient</Text>
       <TextInput
-      testID='ingredient-search'
-      onChangeText={text => searchIngredients(text)}
-      style={{borderColor: 'lightgray', borderWidth: 1, width: 200}}
+        testID='ingredientSearch'
+        onChangeText={text => filterRecipesByIngredient(text)}
+        style={{borderColor: 'lightgray', borderWidth: 1, width: 200}}
       />
       <FlatList
         testID='recipes'
         data={meals}
         renderItem={renderMeals}
         extraData={meals}
-        keyExtractor={item => item.key}
+        keyextractor={(item) => item.title}
       />
+      {shoppingList.length>0 && 
+        <Text testID='shoppingList'>{shoppingList.length}</Text>
+      } 
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -44,5 +54,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 20
-  },
+  }
 });
