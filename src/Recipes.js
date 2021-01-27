@@ -1,16 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, TextInput, FlatList, SafeAreaView } from 'react-native';
-import Meal from './components/Meal'
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
+import Meal from '../components/Meal'
 
-export default function App() {
-  const recipes = require('./src/recipes.json');
+const Recipes = ({ navigation }) => {
+  const recipes = require('../src/recipes.json');
   const [meals, setMeals] = useState(recipes);
   const [shoppingList, setShoppingList] = useState([]);
   
   const renderMeals = ({ item }) => (
-    <Meal item={item} addItem={addMealToShoppingList} />
+    <Meal item={ item } addItem={ addMealToShoppingList } />
   );
 
   const filterRecipesByIngredient = (textInput) => {
@@ -25,27 +24,30 @@ export default function App() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={ styles.container }>
       <Text>Search By Ingredient</Text>
       <TextInput
         testID='ingredientSearch'
-        onChangeText={text => filterRecipesByIngredient(text)}
-        style={{borderColor: 'lightgray', borderWidth: 1, width: 200}}
+        onChangeText={ text => filterRecipesByIngredient(text) }
+        style={{ borderColor: 'lightgray', borderWidth: 1, width: 200 }}
       />
       <FlatList
         testID='recipes'
-        data={meals}
-        renderItem={renderMeals}
-        extraData={meals}
-        keyextractor={(item) => item.title}
+        data={ meals }
+        renderItem={ renderMeals }
+        extraData={ meals }
+        keyextractor={ item => item.id.toString() }
+        keyboardShouldPersistTaps={'always'}
       />
       {shoppingList.length>0 && 
-        <Text testID='shoppingList'>{shoppingList.length}</Text>
+        <TouchableOpacity testID='shoppingList' onPress={() => navigation.navigate('ShoppingList', { shoppingList })} >
+          <Text>{ shoppingList.length }</Text>
+        </TouchableOpacity> 
       } 
       <StatusBar style="auto" />
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -56,3 +58,5 @@ const styles = StyleSheet.create({
     paddingTop: 20
   }
 });
+
+export default Recipes;
