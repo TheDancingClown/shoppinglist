@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
 import Meal from '../components/Meal'
 
+
 const Recipes = ({ navigation }) => {
   const recipes = require('../src/recipes.json');
   const [meals, setMeals] = useState(recipes);
@@ -19,8 +20,8 @@ const Recipes = ({ navigation }) => {
 
   const addMealToShoppingList = (item) => {
     setShoppingList(prevItems => {
-      return [...prevItems, item]
-    })
+      return [...prevItems, item];
+    });
   };
 
   return (
@@ -40,7 +41,7 @@ const Recipes = ({ navigation }) => {
         keyboardShouldPersistTaps={'always'}
       />
       {shoppingList.length>0 && 
-        <TouchableOpacity testID='shoppingList' onPress={() => navigation.navigate('ShoppingList', { shoppingList })} >
+        <TouchableOpacity testID='shoppingList' onPress={() => navigation.navigate('ShoppingList', { shoppingList, setShoppingList })} >
           <Text>{ shoppingList.length }</Text>
         </TouchableOpacity> 
       } 

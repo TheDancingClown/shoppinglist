@@ -1,21 +1,43 @@
-import React from 'react';
-import { SafeAreaView, FlatList, Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, FlatList, Text, StyleSheet, View, TouchableOpacity } from 'react-native';
 
-const ShoppingList = ({ route }) => {
+const ShoppingList = ({ route, navigation }) => {
   
-  const { shoppingList } = route.params;
+  const { shoppingList, setShoppingList } = route.params;
+  const [list, setList] = useState(shoppingList)
+  
+  const removeItem = id => {
+    setList(prevItems => {
+      return prevItems.filter(item => item.id != id);
+    });
+  }
+
+  const goBack = () => {
+    setShoppingList(list)
+    navigation.navigate('Recipes')
+  }
 
   const renderItems = ({ item }) => (
-    <Text>{item.title}</Text>
+    <View>
+      <Text>{item.title}</Text>
+      <TouchableOpacity onPress={() => removeItem(item.id) }>
+        <Text>Remove</Text>
+      </TouchableOpacity>
+    </View>
   );
 
   return (
     <SafeAreaView style={ styles.container }>
       <FlatList
-      data={ shoppingList }
-      renderItem={ renderItems } 
-      extraData={ shoppingList }
+      data={ list }
+      renderItem={ renderItems }
+      extraData= { list }
+      keyextractor={ item => item.id.toString() }
       />
+      <TouchableOpacity
+      onPress={() => goBack() }>
+        <Text>See Recipes</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   )
 };
@@ -30,6 +52,4 @@ const styles = StyleSheet.create({
   }
 });
 
-
-
-export default ShoppingList
+export default ShoppingList;
