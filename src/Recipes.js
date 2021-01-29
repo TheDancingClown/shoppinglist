@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TextInput, FlatList, SafeAreaView, TouchableOpacity, Alert } from 'react-native';
 import Meal from '../components/Meal'
 
 
@@ -13,16 +13,32 @@ const Recipes = ({ navigation }) => {
     <Meal item={ item } addItem={ addMealToShoppingList } />
   );
 
-  const filterRecipesByIngredient = (textInput) => {
+  const filterRecipesByIngredient = textInput => {
     setMeals(recipes.filter(meal => Object.keys(meal.ingredients)
     .some(ingredient => ingredient.includes(textInput.toLowerCase()))));
   };
 
-  const addMealToShoppingList = (item) => {
-    setShoppingList(prevItems => {
-      return [...prevItems, item];
-    });
+  const addMealToShoppingList = item => {
+    if (!mealAlreadyAdded(item)) {
+      setShoppingList(prevItems => {
+        return [...prevItems, item];
+      });
+    } else {
+      showAlert()
+    }
   };
+
+  const showAlert = () => {
+    Alert.alert('Meal already added to the list')
+  }
+
+  const mealAlreadyAdded = item => {
+    for (var i=0; i < shoppingList.length; i++) {
+      if (shoppingList[i].title == item.title) {
+        return true
+      }
+    }
+  }
 
   return (
     <SafeAreaView style={ styles.container }>
@@ -37,7 +53,7 @@ const Recipes = ({ navigation }) => {
         data={ meals }
         renderItem={ renderMeals }
         extraData={ meals }
-        keyextractor={ item => item.id.toString() }
+        keyextractor={ item => item.title }
         keyboardShouldPersistTaps={'always'}
       />
       {shoppingList.length>0 && 

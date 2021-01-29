@@ -22,7 +22,7 @@ export default function App() {
         />
         <Stack.Screen 
         name="ShoppingList"
-        options={{ title: 'Shopping List' }}
+        options={{ title: 'Shopping List', headerLeft: null }}
         component={ShoppingList} 
         />
       </Stack.Navigator>
