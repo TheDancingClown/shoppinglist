@@ -9,7 +9,6 @@ const Recipes = ({ navigation }) => {
   const recipes = require('../recipes.json');
   const [filteredMeals, setFilteredMeals] = useState(recipes);
   const list = useSelector( state => state.shoppingList.list);
-  console.log(list)
   const renderMeals = ({ item }) => (
     <Meal item={ item } />
   );

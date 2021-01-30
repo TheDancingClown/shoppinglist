@@ -6,26 +6,9 @@ import { removeMeal } from '../features/shoppingListSlice'
 
 const ShoppingList = () => {
   
-  const { list } = useSelector( state => state.shoppingList);
+  const list = useSelector( state => state.shoppingList.list);
+  const ingredients = useSelector( state => state.shoppingList.ingredients);
   const dispatch = useDispatch();
-  const [ingredientsList, setIngredientsList] = useState([]);
-
-  useEffect(() => {
-    setIngredientsList(listUniqueIngredients(list))
-  }, [])
-  
-  // const removeItem = title => {
-  //   setList(prevItems => {
-  //     return prevItems.filter(item => item.title != title);
-  //   });
-  // }
-
-  const listUniqueIngredients = list => {
-    var newList = {}
-    list.forEach(meal => Object.assign(newList, meal.ingredients))
-    return Object.keys(newList)
-  }
-
   const renderItems = ({ item }) => (
     <View>
       <Text>{item.title}</Text>
@@ -43,10 +26,9 @@ const ShoppingList = () => {
       keyExtractor={ item => item.title }
       />
       <FlatList
-      data={ ingredientsList }
-      renderItem={({item}) => (<Text>{item}</Text>) }
-      keyExtractor={ item => item.key}
-      extraData={ ingredientsList }
+      data={ Object.keys(ingredients) }
+      renderItem={({item}) => (<Text>{item}: {ingredients[item]}</Text>) }
+      keyExtractor={ item => item}
       />
     </SafeAreaView>
   )
