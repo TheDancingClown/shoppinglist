@@ -1,17 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-const Meal = ({ item, addItem }) => (
+const Ingredients = ({ list }) => {
+  const 
+  return (
   <View testID='meal' style={ styles.item }>
-    <Text style={ styles.title }>{ item.title }</Text>
-    <TouchableOpacity 
-      testID='addMeal'
-      style={ styles.button }
-      onPress={ () => addItem(item) }>
-      <Text>Add</Text>
-    </TouchableOpacity>
-  </View>
-);
+    <Text style={ styles.title }>{ list.key }</Text>
+  </View>)
+};
 
 const styles = StyleSheet.create({
   item: {
@@ -29,4 +25,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Meal;
+export default Ingredients;

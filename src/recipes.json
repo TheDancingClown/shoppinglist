@@ -1,57 +1,54 @@
 [
   {
-    "id": 1,
     "title": "Peanut satay tempeh with chilli & crispy kale rice",
     "ingredients": {
-      "carrot": "200 g",
-      "kale": "80 g",
-      "brown rice": "80 g",
-      "tempeh": "200 g",
-      "chilli": "0.5 units",
-      "coriander": "1 units",
-      "ginger": "4 cm",
-      "lime": "1 units",
-      "spring onion": "2 units",
-      "tamari": "2 units",
-      "maple syrup": "1 tbsp",
-      "peanut paste": "2 tbsp"
+      "carrots (g)": 200,
+      "kale (g)": 80,
+      "brown rice (g)": 80,
+      "tempeh (g)": 200,
+      "chilli, red": 0.5,
+      "coriander (bunch)": 1,
+      "ginger (cm)": 4,
+      "limes": 1,
+      "spring onions": 2,
+      "tamari (tsp)": 2,
+      "maple syrup (tsp)": 3,
+      "peanut paste (tsp)": 6
     }
   },
   {
-    "id": 2,
     "title": "Beetroot burgers with chipotle slaw and fries",
     "ingredients": {
-      "beetroot": "200 g",
-      "butter beans": "240 g",
-      "red cabbage": "150 g",
-      "carrot": "150 g",
-      "chipotle paste": "1 tsp",
-      "fresh dill": "1 unit",
-      "lime": "1 unit",
-      "portobello mushrooms": "8 units",
-      "spring onion": "4 units",
-      "large white potatoes": "800 g",
-      "quinoa": "80 g",
-      "white sesame seeds": "20 g",
-      "large tomatoes": "2 units"
+      "beetroot (g)": 200,
+      "butter beans (g)": 240,
+      "red cabbage (g)": 150,
+      "carrots (g)": 150,
+      "chipotle paste (tsp)": 1,
+      "fresh dill": 1,
+      "limes": 1,
+      "portobello mushrooms": 8,
+      "spring onions": 4,
+      "potatoes, large white (g)": 800,
+      "quinoa (g)": 80,
+      "white sesame seeds (g)": 20,
+      "tomatoes, large": 2
     }
   },
   {
-    "id": 3,
     "title": "Sesame tofu, mango & spicy ginger dressing",
     "ingredients": {
-      "sugar snap peas": "80 g",
-      "firm tofu": "300 g",
-      "brown basmati rice": "250 g",
-      "sesame oil": "1 tbsp",
-      "black sesame seeds": "2 tsp",
-      "tamari": "1 tsp",
-      "lime": "1 unit",
-      "mango": "1 unit",
-      "spring onion": "2 units",
-      "red chili": "1 unit",
-      "ginger": "4 cm",
-      "maple syrup": "2 tsp"
+      "sugar snap peas (g)": 80,
+      "firm tofu (g)": 300,
+      "brown basmati rice (g)": 250,
+      "sesame oil (tsp)": 3,
+      "black sesame seeds (tsp)": 2,
+      "tamari (tsp)": 1,
+      "limes": 1,
+      "mangos": 1,
+      "spring onions": 2,
+      "chilli, red": 1,
+      "ginger (cm)": 4,
+      "maple syrup (tsp)": 2
     }
   }
 ]
