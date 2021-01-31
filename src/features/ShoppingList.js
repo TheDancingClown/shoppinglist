@@ -5,7 +5,7 @@ import AddedMeal from '../components/AddedMeal'
 
 const ShoppingList = () => {
 
-  const ingredients = useSelector( state => state.shoppingList.ingredients);
+  const ingredients = useSelector(state => state.shoppingList.ingredients);
 
   return (
     <SafeAreaView style={ styles.container }>
