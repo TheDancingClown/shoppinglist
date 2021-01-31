@@ -2,11 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
+import recipes from '../assets/recipes'
 import Meal from '../components/Meal'
 
 
 const Recipes = ({ navigation }) => {
-  const recipes = require('../recipes.json');
   const [filteredMeals, setFilteredMeals] = useState(recipes);
   const list = useSelector( state => state.shoppingList.list);
   const renderMeals = ({ item }) => (
@@ -31,8 +31,11 @@ const Recipes = ({ navigation }) => {
         style={{ borderColor: 'lightgray', borderWidth: 1, width: 200 }}
       />
       <FlatList
+        style={ styles.list }
         testID='recipes'
         data={ filteredMeals }
+        numColumns={2}
+        columnWrapperStyle={{justifyContent: 'space-between'}}
         renderItem={ renderMeals }
         keyExtractor={ item => item.title }
         keyboardShouldPersistTaps={'always'}
@@ -53,7 +56,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 20
+    paddingTop: 20,
+    flexDirection: 'column'
+  },
+  list: {
+    flexDirection: 'row',
   }
 });
 

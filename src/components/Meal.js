@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { addMeal } from '../features/shoppingListSlice' 
 
@@ -8,6 +8,7 @@ const Meal = ({ item }) => {
 
   return (
     <View testID='meal' style={ styles.item }>
+      <Image style={ styles.thumbnail} source={ item.thumbnail } />
       <Text style={ styles.title }>{ item.title }</Text>
       <TouchableOpacity 
         testID='addMeal'
@@ -15,6 +16,7 @@ const Meal = ({ item }) => {
         onPress={() => dispatch(addMeal(item))}>
         <Text>Add</Text>
       </TouchableOpacity>
+      
     </View>
   )
 };
@@ -22,16 +24,27 @@ const Meal = ({ item }) => {
 const styles = StyleSheet.create({
   item: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     borderWidth: 1,
     borderColor: 'lightgray',
-    margin: 2
+    margin: 10,
+    maxWidth: 150,
+    padding: 10
   },
   title: {
-    textAlign: 'left'
+    textAlign: 'center',
+    margin: 5
   },
   button: {
-    borderWidth: 1
+    borderWidth: 1,
+    width: 50,
+    padding: 5,
+    alignSelf: 'center',
+  },
+  thumbnail: {
+    height: 120,
+    width: 120,
+    alignSelf: 'center',
   }
 });
 

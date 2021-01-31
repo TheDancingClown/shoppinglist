@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { SafeAreaView, FlatList, Text, StyleSheet, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { SafeAreaView, FlatList, Text, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { removeMeal } from '../features/shoppingListSlice' 
+import AddedMeal from '../components/AddedMeal'
 
 const ShoppingList = () => {
-  
-  const list = useSelector( state => state.shoppingList.list);
+
   const ingredients = useSelector( state => state.shoppingList.ingredients);
-  const dispatch = useDispatch();
-  const renderItems = ({ item }) => (
-    <View>
-      <Text>{item.title}</Text>
-      <TouchableOpacity onPress={() => dispatch(removeMeal(item)) }>
-        <Text>Remove</Text>
-      </TouchableOpacity>
-    </View>
-  );
 
   return (
     <SafeAreaView style={ styles.container }>
-      <FlatList
-      data={ list }
-      renderItem={ renderItems }
-      keyExtractor={ item => item.title }
-      />
+      <AddedMeal/>
       <FlatList
       data={ Object.keys(ingredients) }
       renderItem={({item}) => (<Text>{item}: {ingredients[item]}</Text>) }

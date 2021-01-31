@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Alert } from 'react-native'
 
 const shoppingList = createSlice({
   name: 'shoppingList',
@@ -11,6 +12,8 @@ const shoppingList = createSlice({
       if(!shoppingList.caseReducers.alreadyAdded(state, action)) {
         state.list.push(action.payload);
         shoppingList.caseReducers.addIngredients(state, action);
+      } else {
+        shoppingList.caseReducers.alreadyAddedAlert()
       }
     },
     alreadyAdded: (state, action) => {
@@ -19,10 +22,6 @@ const shoppingList = createSlice({
           return true;
         };
       };
-    },
-    removeMeal: (state, action) => {
-      state.list = state.list.filter((item) => item.title !== action.payload.title);
-      shoppingList.caseReducers.removeIngredients(state, action);
     },
     addIngredients: (state, action) => {
       newList = {}
@@ -35,6 +34,10 @@ const shoppingList = createSlice({
       }
       Object.assign(state.ingredients, newList)
     },
+    removeMeal: (state, action) => {
+      state.list = state.list.filter((item) => item.title !== action.payload.title);
+      shoppingList.caseReducers.removeIngredients(state, action);
+    },
     removeIngredients: (state, action) => {
       newList = {}
       for (const [ingredient, value] of Object.entries(action.payload.ingredients)) {
@@ -45,6 +48,9 @@ const shoppingList = createSlice({
         }
       }
       Object.assign(state.ingredients, newList)
+    },
+    alreadyAddedAlert: () => {
+      Alert.alert("Meal has already been added")
     }
   }
 });
