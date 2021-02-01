@@ -5,6 +5,7 @@
     "name": "ingredients",
     "slug": "ingredients",
     "version": "1.0.0",
+    "orientation": "portrait",
     "assetBundlePatterns": [
       "**/*"
     ]

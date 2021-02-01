@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignSelf: 'center',
     paddingTop: 20
   },
   ingredientsText: {

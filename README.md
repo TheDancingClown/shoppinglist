@@ -15,17 +15,18 @@ The app allows a user to search by ingredient and return a list of recipes that 
 * Meals can be removed on the shopping list screen and the ingredients list updates accordingly.
 * App is locked in portrait mode.
 
-## Redux
+## Redux Toolkit
 
-State was orginally passed between screens via props, however when attempting to also pass functions between screens I decided that functionality would be improved via the use of Redux.  Redux Toolkit was used for ease of learning.    
+State was orginally passed between screens via props, however when attempting to also pass functions between screens I decided that functionality would be improved via the use of Redux.  RTK was chosen for ease of setup.    
 Two states are stored - an array of meal objects added and an object of ingredient keys and values. The reducer actions for these states are all contained within the shppingListSlice.    
-When the current state is needed to be retrieved to populate lists or update the badge count, useSelector is called. When state is altered, for instance when adding or removing meals, useDispatch is called. Once the redux store has been set up, it is much easier and cleaner for state management than passing around props between screens.
+When the current state is needed to populate lists or update the badge count, useSelector hook is called. When state is altered, for instance when adding or removing meals, useDispatch hooks are called. Once the redux store has been set up, it is much easier and cleaner for state management than passing around props between screens.
 
 ## Other dependencies added
 
-React navigation bottom tabs    
-React native vector icons    
-React native safe area context
+@react-navigation    
+react-native-vector-icons    
+react-native-safe-area-context  
+expo-screen-orientation   
 
 ## Future updates
 
