@@ -7,7 +7,6 @@ import ShoppingList from '../features/ShoppingList'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const CustomTabNavigator = () => {
-
   const Tab = createBottomTabNavigator();
   const list = useSelector(state => state.shoppingList.list)
 

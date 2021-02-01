@@ -29,8 +29,7 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
     margin: 10,
     maxWidth: 150,
-    padding: 10,
-    
+    padding: 10 
   },
   title: {
     textAlign: 'center',
@@ -51,8 +50,7 @@ const styles = StyleSheet.create({
   thumbnail: {
     height: 120,
     width: 120,
-    alignSelf: 'center',
-    
+    alignSelf: 'center'
   }
 });
 

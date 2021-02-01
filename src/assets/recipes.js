@@ -3,7 +3,7 @@
 const recipes = [
   {
     "title": "Peanut satay tempeh with chilli & crispy kale rice",
-    "thumbnail": require('./pst&c&ckr.jpg'),
+    "thumbnail": require('./images/pst&c&ckr.jpg'),
     "ingredients": {
       "kale (g)": 80,
       "carrots (g)": 200,
@@ -21,7 +21,7 @@ const recipes = [
   },
   {
     "title": "Beetroot burgers with chipotle slaw and fries",
-    "thumbnail": require('./bb&cs&f.jpg'),
+    "thumbnail": require('./images/bb&cs&f.jpg'),
     "ingredients": {
       "beetroot (g)": 200,
       "red cabbage (g)": 150,
@@ -40,7 +40,7 @@ const recipes = [
   },
   {
     "title": "Sesame tofu, mango & spicy ginger dressing",
-    "thumbnail": require('./stm&sgd.jpg'),
+    "thumbnail": require('./images/stm&sgd.jpg'),
     "ingredients": {
       "sugar snap peas (g)": 80,
       "spring onions": 2,
@@ -58,7 +58,7 @@ const recipes = [
   },
   {
     "title": "Tofu Pad Thai with courgette noodles",
-    "thumbnail": require('./tpt&cn.jpg'),
+    "thumbnail": require('./images/tpt&cn.jpg'),
     "ingredients": {
       "carrots (g)": 300,
       "courgette (g)": 300,
@@ -76,7 +76,7 @@ const recipes = [
   },
   {
     "title": "West Indian spinach and chickpea curry with rice",
-    "thumbnail": require('./wis&cc&r.jpg'),
+    "thumbnail": require('./images/wis&cc&r.jpg'),
     "ingredients": {
       "broccoli (head)": 1,
       "spinach, baby (g)": 160,
@@ -94,7 +94,7 @@ const recipes = [
   },
   {
     "title": "Chocolate mousse cheesecake",
-    "thumbnail": require('./cmc.jpg'),
+    "thumbnail": require('./images/cmc.jpg'),
     "ingredients": {
       "tofu, silken (g)": 600,
       "oreos": 32,

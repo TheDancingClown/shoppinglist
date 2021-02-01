@@ -4,7 +4,6 @@ import { StyleSheet, Text, TextInput, FlatList, SafeAreaView, View } from 'react
 import recipes from '../assets/recipes'
 import Meal from '../components/Meal'
 
-
 const Recipes = () => {
   const [filteredMeals, setFilteredMeals] = useState(recipes);
 
@@ -24,7 +23,7 @@ const Recipes = () => {
         <TextInput
           testID='ingredientSearch'
           onChangeText={ text => filterRecipesByIngredient(text) }
-          style={{ borderColor: 'lightgray', borderWidth: 1, width: 200 }}
+          style={ styles.textInput }
         />
       </View>
       <FlatList
@@ -45,7 +44,8 @@ const Recipes = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   searchContainer: {
     alignItems: 'center',
@@ -63,8 +63,12 @@ const styles = StyleSheet.create({
   },
   columnWrapperStyle: {
     justifyContent: 'space-between',
-    
-   
+  },
+  textInput: {
+    borderColor: 'lightgray',
+    borderWidth: 1,
+    width: 200,
+    marginBottom: 10
   }
 });
 

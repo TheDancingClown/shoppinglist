@@ -3,11 +3,11 @@ import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native
 import { useDispatch, useSelector } from 'react-redux';
 import { removeMeal } from '../features/shoppingListSlice' 
 
-const AddedMeal = () => {
+const AddedMeals = () => {
   const list = useSelector( state => state.shoppingList.list);
   const dispatch = useDispatch();
 
-  const renderItems = ({ item }) => (
+  const renderMeal = ({ item }) => (
     <View style={ styles.mealContainer}>
       <Text>{item.title}</Text>
       <TouchableOpacity 
@@ -22,7 +22,7 @@ const AddedMeal = () => {
     <View testID='added meal' style={ styles.container }>
       <FlatList
       data={ list }
-      renderItem={ renderItems }
+      renderItem={ renderMeal }
       keyExtractor={ item => item.title }
       />
     </View>
@@ -46,17 +46,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 5
   },
-  button: {
-    borderWidth: 1,
-    width: 50,
-    padding: 5,
-    alignSelf: 'center',
-  },
-  thumbnail: {
-    height: 120,
-    width: 120,
-    alignSelf: 'center',
-  }
 });
 
-export default AddedMeal;
+export default AddedMeals;
