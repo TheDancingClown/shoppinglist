@@ -49,7 +49,7 @@ const recipes = [
       "limes": 1,
       "mango": 1,
       "brown basmati rice (g)": 250,
-      "firm tofu (g)": 300,
+      "tofu, firm (g)": 300,
       "sesame oil (tsp)": 3,
       "tamari (tsp)": 1,
       "maple syrup (tsp)": 2,
@@ -67,7 +67,7 @@ const recipes = [
       "chilli, red": 1,
       "garlic cloves": 1,
       "limes": 1,
-      "firm tofu (g)": 300,
+      "tofu, firm (g)": 300,
       "sesame oil (tsp)": 6,
       "tamari (tsp)": 6,
       "maple syrup (tsp)": 2,
@@ -90,6 +90,18 @@ const recipes = [
       "passata (g)": 200,
       "cocount milk (ml)": 200,
       "spice mix, west indian (tsp)": 6
+    }
+  },
+  {
+    "title": "Chocolate mousse cheesecake",
+    "thumbnail": require('./cmc.jpg'),
+    "ingredients": {
+      "tofu, silken (g)": 600,
+      "oreos": 32,
+      "chocolate, dark (g)": 400,
+      "margarine (g)": 45,
+      "maple syrup (tsp)": 24,
+      "vanilla extract (tsp)": 2
     }
   }
 ]

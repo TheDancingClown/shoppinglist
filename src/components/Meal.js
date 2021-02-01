@@ -14,7 +14,7 @@ const Meal = ({ item }) => {
         testID='addMeal'
         style={ styles.button }
         onPress={() => dispatch(addMeal(item))}>
-        <Text>Add</Text>
+        <Text style={styles.buttonText}>+</Text>
       </TouchableOpacity>
       
     </View>
@@ -29,22 +29,30 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
     margin: 10,
     maxWidth: 150,
-    padding: 10
+    padding: 10,
+    
   },
   title: {
     textAlign: 'center',
-    margin: 5
+    margin: 5,
+    shadowOpacity: 0,
+    height: 70
   },
   button: {
-    borderWidth: 1,
-    width: 50,
-    padding: 5,
-    alignSelf: 'center',
+    borderRadius: 4,
+    backgroundColor: 'green',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 20
   },
   thumbnail: {
     height: 120,
     width: 120,
     alignSelf: 'center',
+    
   }
 });
 

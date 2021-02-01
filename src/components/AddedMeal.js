@@ -8,10 +8,12 @@ const AddedMeal = () => {
   const dispatch = useDispatch();
 
   const renderItems = ({ item }) => (
-    <View>
+    <View style={ styles.mealContainer}>
       <Text>{item.title}</Text>
-      <TouchableOpacity onPress={() => dispatch(removeMeal(item)) }>
-        <Text>Remove</Text>
+      <TouchableOpacity 
+        onPress={() => dispatch(removeMeal(item)) }
+        style={{ backgroundColor: 'red', borderRadius: 4}}>
+        <Text style={{ color: 'white', textAlign: 'right' }}>X</Text>
       </TouchableOpacity>
     </View>
   );
@@ -29,11 +31,16 @@ const AddedMeal = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     borderWidth: 1,
     borderColor: 'lightgray',
     padding: 10
+  },
+  mealContainer: {
+    flexDirection: 'row', 
+    alignItems: 'stretch', 
+    justifyContent: 'space-between',
+    margin: 2
   },
   title: {
     textAlign: 'center',
