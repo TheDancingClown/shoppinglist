@@ -24,18 +24,18 @@ const recipes = [
     "thumbnail": require('./images/beetrootBurgers.jpg'),
     "ingredients": {
       "beetroot (g)": 200,
-      "red cabbage (g)": 150,
+      "cabbage, red (g)": 150,
       "carrots (g)": 150,
       "tomatoes, large": 2,
-      "portobello mushrooms": 8,
+      "mushrooms, portobello": 8,
       "spring onions": 4,
       "potatoes, large white (g)": 800,
-      "fresh dill": 1,
+      "dill, fresh": 1,
       "limes": 1,
       "butter beans (g)": 240,
       "quinoa (g)": 80,
       "chipotle paste (tsp)": 1,
-      "white sesame seeds (g)": 20
+      "sesame seeds, white (g)": 20
     }
   },
   {
@@ -48,12 +48,12 @@ const recipes = [
       "ginger, fresh (cm)": 4,
       "limes": 1,
       "mango": 1,
-      "brown basmati rice (g)": 250,
+      "rice, brown basmati (g)": 250,
       "tofu, firm (g)": 300,
       "sesame oil (tsp)": 3,
       "tamari (tsp)": 1,
       "maple syrup (tsp)": 2,
-      "black sesame seeds (tsp)": 2
+      "sesame seeds, black (tsp)": 2
     }
   },
   {

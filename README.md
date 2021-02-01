@@ -1,7 +1,8 @@
 # Shopping List
 
-A simple project to learn Redux Toolkit within React Native and Expo.    
-In order to save food wastage, the app will allow a user to enter an ingredient and the list of recipes will dynamically change as the search is narrowed. Meals can be added to a shopping list and a second screen will list all combined ingredients common to the added meals.    
+A simple project to learn Redux Toolkit within React Native and Expo. 
+       
+The app allows a user to search by ingredient and return a list of recipes that contain the ingredient. Meals can be added to a shopping list and a second screen will list all necessary ingredients combined and their quantities.    
 
 ![recipesScreenshot](./src/assets/images/recipesScreenshot.png)
 
@@ -23,7 +24,7 @@ When the current state is needed to be retrieved to populate lists or update the
 ## Other dependencies added
 
 React navigation bottom tabs    
-React native vector icons
+React native vector icons    
 React native safe area context
 
 ## Future updates
@@ -31,8 +32,9 @@ React native safe area context
 It has only been simulated on iOS so far, so checks are needed for android compatability with fonts, icons and screen sizes.    
 Modal views - click on a recipe thumbnail and see greater detail. List of ingredients, instructions, larger image.  
 Ability to add new recipes? - currently hardcoded and manually typed into js file.     
-Change styling of shopping list - especially list of meals at top. Remove button hard to press on smaller screens.    
-Sort ingredient alphabetically?    
+Change styling of shopping list (add background image?) - especially list of meals at top. Remove button hard to press on smaller screens.    
+Sort ingredient alphabetically?   
+Add ability to adjust meals per person, increasing ingredient quantities if needed. 
 
 
 ![ingredientsScreenshot](./src/assets/images/ingredientsScreenshot.png)
