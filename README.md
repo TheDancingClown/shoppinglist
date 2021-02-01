@@ -7,7 +7,7 @@ In order to save food wastage, the app will allow a user to enter an ingredient 
 
 ## Features
 
-* The search function is case insensitive and will return partial matches - typing 'ing' will return meals containg ingredients 'spring onions', 'ginger' etc.
+* The search function is case insensitive and will return partial matches - typing 'ing' will return meals containing ingredients 'spring onions', 'ginger' etc.
 * Meals can only be added to the shopping list once and an alert will show if attempted to add twice.
 * Naigation is via the bottom tab bar and can easily switch between the list of recipes and the shopping list. The shopping list icon badge shows how many meals have been added.
 * When a meal is added, common ingredients are added together within the shopping list.
@@ -17,7 +17,7 @@ In order to save food wastage, the app will allow a user to enter an ingredient 
 ## Redux
 
 State was orginally passed between screens via props, however when attempting to also pass functions between screens I decided that functionality would be improved via the use of Redux.  Redux Toolkit was used for ease of learning.    
-Two variables are stored - the list of meals added and the combined list of ingredients. The reducer actions for these states are all contained within the shppingListSlice.    
+Two states are stored - an array of meal objects added and an object of ingredient keys and values. The reducer actions for these states are all contained within the shppingListSlice.    
 When the current state is needed to be retrieved to populate lists or update the badge count, useSelector is called. When state is altered, for instance when adding or removing meals, useDispatch is called. Once the redux store has been set up, it is much easier and cleaner for state management than passing around props between screens.
 
 ## Other dependencies added
