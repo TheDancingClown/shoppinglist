@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, FlatList, SafeAreaView, View } from 'react-native';
+import { StyleSheet, Text, TextInput, FlatList, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import recipes from '../assets/recipes'
 import Meal from '../components/Meal'
 

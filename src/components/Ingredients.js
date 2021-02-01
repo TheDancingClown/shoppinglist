@@ -1,9 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { useSelector } from 'react-redux';
+import { useFonts } from 'expo-font';
 
 const Ingredients = () => {
   const ingredients = useSelector(state => state.shoppingList.ingredients);
+  const [loaded] = useFonts({
+    Noteworthy: require('../assets/fonts/Noteworthy.ttf'),
+  });
+
+  if (!loaded) {
+    return null;
+  }
 
   const renderIngredient = ({ item }) => (
     <Text style={styles.ingredientsText}>{item}: {ingredients[item]}</Text>
@@ -39,9 +47,7 @@ const styles = StyleSheet.create({
   },
   ingredientsText: {
     fontSize: 20,
-    fontFamily: Platform.OS === 'android'
-        ? 'noteworthy'
-        : 'Noteworthy', //need to fix
+    fontFamily: 'Noteworthy',
   },
   listHeading: {
     fontSize: 25,

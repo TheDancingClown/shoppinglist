@@ -16,7 +16,6 @@ const Meal = ({ item }) => {
         onPress={() => dispatch(addMeal(item))}>
         <Text style={styles.buttonText}>+</Text>
       </TouchableOpacity>
-      
     </View>
   )
 };
