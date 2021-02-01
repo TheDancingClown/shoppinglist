@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from "react-redux"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Recipes from '../features/Recipes';
 import ShoppingList from '../features/ShoppingList'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const CustomTabNavigator = () => {
   const Tab = createBottomTabNavigator();

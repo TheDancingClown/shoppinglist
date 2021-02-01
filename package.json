@@ -41,7 +41,10 @@
     "react-test-renderer": "~16.13.1"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"],
+    "timers": "fake",
+    "testEnvironment": "jsdom"
   },
   "private": true
 }

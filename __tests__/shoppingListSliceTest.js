@@ -1,5 +1,6 @@
 import { describe } from 'jest-circus';
 import shoppingList, { addMeal, removeMeal } from '../src/features/shoppingListSlice'
+
 const salad = {title: "salad", ingredients: {"lettuce": 1}};
 const tlt = {title: "tlt", ingredients: {"lettuce": 1, "tofu": 1, "tomato": 1}};
 const initialState = { list: [], ingredients: {} }
@@ -36,7 +37,7 @@ const secondState = {
   }]
 }
 
-describe('shoppingList reducer', () => {
+describe('shoppingList reducer',  () => {
   describe('addMeal', () => {
     it('should return the initial state', () => {
       expect(shoppingList(undefined, {}))
