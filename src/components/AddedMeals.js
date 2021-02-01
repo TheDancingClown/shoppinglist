@@ -12,8 +12,8 @@ const AddedMeals = () => {
       <Text>{item.title}</Text>
       <TouchableOpacity 
         onPress={() => dispatch(removeMeal(item)) }
-        style={{ backgroundColor: 'red', borderRadius: 4}}>
-        <Text style={{ color: 'white', textAlign: 'right' }}>X</Text>
+        style={ styles.removeButton }>
+        <Text style={{ color: 'white' }}>X</Text>
       </TouchableOpacity>
     </View>
   );
@@ -45,6 +45,10 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     margin: 5
+  },
+  removeButton: {
+    backgroundColor: 'red',
+     borderRadius: 4
   },
 });
 
