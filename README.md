@@ -24,6 +24,7 @@ When the current state is needed to be retrieved to populate lists or update the
 
 React navigation bottom tabs    
 React native vector icons
+React native safe area context
 
 ## Future updates
 
