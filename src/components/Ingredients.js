@@ -33,7 +33,7 @@ const Ingredients = () => {
 
 const styles = StyleSheet.create({
   innerContainer: {
-    alignItems: 'center',
+    alignItems: 'stretch',
     backgroundColor: 'lightyellow',
     flex: 1
   },
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     justifyContent: 'flex-start',
+    alignItems: 'center',
     paddingTop: 20
   },
   ingredientsText: {
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
   listHeading: {
     fontSize: 25,
     margin: 10,
+    textAlign: 'center',
     fontFamily: 'Noteworthy',
   }
 });
