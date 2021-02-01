@@ -1,6 +1,6 @@
 # Shopping List
 
-A simple project to learn to implement Redux Toolkit within React Native.    
+A simple project to learn Redux Toolkit within React Native and Expo.    
 In order to save food wastage, the app will allow a user to enter an ingredient and the list of recipes will dynamically change as the search is narrowed. Meals can be added to a shopping list and a second screen will list all combined ingredients common to the added meals.    
 
 ![recipesScreenshot](./src/assets/images/recipesScreenshot.png)
@@ -16,21 +16,22 @@ In order to save food wastage, the app will allow a user to enter an ingredient 
 
 ## Redux
 
-State was orginally passed between screen via props, however when attempting to also pass functions between screens I decided that functionality would be improved via the use of Redux.  Redux Toolkit was used for ease of learning.    
+State was orginally passed between screens via props, however when attempting to also pass functions between screens I decided that functionality would be improved via the use of Redux.  Redux Toolkit was used for ease of learning.    
 Two variables are stored - the list of meals added and the combined list of ingredients. The reducer actions for these states are all contained within the shppingListSlice.    
 When the current state is needed to be retrieved to populate lists or update the badge count, useSelector is called. When state is altered, for instance when adding or removing meals, useDispatch is called. Once the redux store has been set up, it is much easier and cleaner for state management than passing around props between screens.
 
 ## Other dependencies added
 
-Expo    
 React navigation bottom tabs    
 React native vector icons
 
-## Further updates
+## Future updates
 
 It has only been simulated on iOS so far, so checks are needed for android compatability with fonts, icons and screen sizes.    
 Modal views - click on a recipe thumbnail and see greater detail. List of ingredients, instructions, larger image.  
-Ability to add new recipes - currently hardcoded and manually typed into js file. 
+Ability to add new recipes? - currently hardcoded and manually typed into js file.     
 Change styling of shopping list - especially list of meals at top. Remove button hard to press on smaller screens.    
+Sort ingredient alphabetically?    
+
 
 ![ingredientsScreenshot](./src/assets/images/ingredientsScreenshot.png)
