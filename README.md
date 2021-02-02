@@ -6,6 +6,10 @@ The app allows a user to search by ingredient and return a list of recipes that 
 
 ![recipesScreenshot](./src/assets/images/recipesScreenshot.png)
 
+## Run
+
+The easiest way to see this app in action is by downloading Expo to your mobile device and scanning in the QR code [here](https://expo.io/@pennywise/projects/ingredients).
+
 ## Features
 
 * The search function is case insensitive and will return partial matches - typing 'ing' will return meals containing ingredients 'spring onions', 'ginger' etc.
@@ -23,10 +27,15 @@ When the current state is needed to populate lists or update the badge count, us
 
 ## Other dependencies added
 
-@react-navigation    
-react-native-vector-icons    
+@react-navigation       
 react-native-safe-area-context  
-expo-screen-orientation   
+expo-screen-orientation  
+
+## Testing
+
+Jest    
+jest-circus   
+Detox       
 
 ## Future updates
 

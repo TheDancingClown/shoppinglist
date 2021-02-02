@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Recipes from '../features/Recipes';
 import ShoppingList from '../features/ShoppingList'
 
@@ -17,7 +17,7 @@ const CustomTabNavigator = () => {
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === 'Recipes') {
             return (
-              <Icon
+              <MaterialCommunityIcons
                 name={focused? 'sprout' : 'sprout-outline'}
                 size={size}
                 color={color}
@@ -25,7 +25,7 @@ const CustomTabNavigator = () => {
             );
           } else if (route.name === 'ShoppingList') {
             return (
-              <Icon
+              <MaterialCommunityIcons
                 name={focused ? 'clipboard-list' : 'clipboard-list-outline'}
                 size={size}
                 color={color}

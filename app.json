@@ -8,6 +8,12 @@
     "orientation": "portrait",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.pennywise.ingredients"
+    },
+    "ios": {
+      "bundleIdentifier": "com.pennywise.ingredients"
+    }
   }
 }
