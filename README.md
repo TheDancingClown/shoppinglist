@@ -8,7 +8,26 @@ The app allows a user to search by ingredient and return a list of recipes that 
 
 ## Run
 
-The easiest way to see this app in action is by downloading Expo to your mobile device and scanning in the QR code [here](https://expo.io/@pennywise/projects/ingredients).
+The easiest way to see this app in action is by downloading Expo to your mobile device and scanning in the QR code [here](https://expo.io/@pennywise/projects/ingredients).    
+    
+Alternatively it can be run through an iPhone simulator if you have already installed xCode.    
+clone this repo 
+```
+git clone https://github.com/TheDancingClown/shoppinglist
+```
+cd into the project directory
+```
+cd shoppinglist
+```
+install dependencies
+```
+npm install
+```
+run expo and press i from the command line or Run on iOS simulator from the browser that opens
+```
+expo start
+```
+
 
 ## Features
 
